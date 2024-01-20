@@ -28,4 +28,13 @@ cd ~/rtabmap_ws
 git clone https://github.com/introlab/rtabmap_ros.git src/rtabmap_ros 
 catkin_make 
 ```
+# 3、运行数据集测试
+数据集下载
+这里我下载的是MH_01这个数据集
+https://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets
 
+先source
+----------------------------------
+roslaunch rtabmap_ros euroc_datasets.launch MH_seq:=true
+# 另起一个新终端
+rosbag play --clock MH_01_easy.bag
